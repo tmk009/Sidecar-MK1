@@ -10,3 +10,7 @@
 *.pyc
 __pycache__/
 .DS_Store
+scripts/verify-public.py
+release.json
+PUBLISHING.md
+PUBLIC-MANIFEST.json
