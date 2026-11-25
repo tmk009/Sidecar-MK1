@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guide &amp; status — MK1 Sidecar</title>
+<meta name="description" content="Requirements, alpha scope, hardware verification and credits for Analog Rytm MK1 Sidecar.">
+<link rel="icon" href="mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+<div class="wrap header-inner">
+<a class="brand" href="index.html">SIDECAR <span>MK1</span></a>
+<nav aria-label="Main navigation">
+<a href="index.html">Overview</a>
+<a href="guide.html" aria-current="page">Setup &amp; status</a>
+</nav>
+</div>
+</header>
+<main class="wrap guide" id="main">
+<p class="eyebrow">0.1.0-alpha.1 · IN PREPARATION</p>
+<h1>Know the setup.<br>Know the limits.</h1>
+<p class="lead">A practical guide to the first Sidecar alpha.</p>
+<div class="notice">
+<p>
+<strong>The first alpha is in preparation.</strong> Downloads are not available yet. Installation files and instructions will be linked from the home page when they are ready.</p>
+</div>
+<nav aria-label="Guide sections">
+<a href="#setup">Setup</a>
+<a href="#status">Test status</a>
+<a href="#limits">Limitations</a>
+<a href="#credits">Credits</a>
+</nav>
+<h2 id="setup">What you’ll need</h2>
+<ul>
+<li>
+<strong>Analog Rytm MK1, original OS 1.74.</strong> Other OS versions and MKII are outside this scope.</li>
+<li>
+<strong>A Raspberry Pi and the matching receiver.</strong> The exact supported Pi model and OS image will be specified after fresh-install testing.</li>
+<li>
+<strong>A USB connection, Pi power and the Rytm’s audio outputs.</strong> The Pi generates audio and returns it over USB to the Rytm track path.</li>
+<li>
+<strong>Your own original firmware and backups.</strong> No Elektron firmware or personal samples are distributed.</li>
+</ul>
+<p>The planned release will generate a separate patched image from the original firmware, preserving the original file. The release will include installation instructions and steps to return to the original firmware.</p>
+<h2 id="status">What has been verified</h2>
+<table>
+<thead>
+<tr>
+<th scope="col">Area</th>
+<th scope="col">Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Native PLAITS and track audio path</td>
+<td>Basic operation confirmed on hardware.</td>
+</tr>
+<tr>
+<td>MD retrigger smoothing</td>
+<td>Local/ARM64 checks and hardware listening test passed.</td>
+</tr>
+<tr>
+<td>SAMPLE integration</td>
+<td>MIX confirmed on hardware; testing of the remaining controls is ongoing.</td>
+</tr>
+<tr>
+<td>LFO transport</td>
+<td>Local/ARM64 checks passed; hardware listening tests are still pending.</td>
+</tr>
+<tr>
+<td>All tracks and choke pairs</td>
+<td>Implemented; full hardware testing is ongoing.</td>
+</tr>
+</tbody>
+</table>
+<p>Before release, we’ll test a fresh Pi installation, longer sessions, locks and LFOs, saving and loading, restarts and reconnection.</p>
+<h2 id="limits">Current limitations</h2>
+<ul>
+<li>GRAIN is excluded. Active machines: PLAITS, MD, ACID, WAVEPAD, JUNO, PLUCK and SAMPLE.</li>
+<li>Twelve tracks share eight physical voices and native choke relationships.</li>
+<li>SAMPLE DIR does not yet support native parameter locks. Some factory sample sources are inaccessible.</li>
+<li>Continuous modulation uses control-rate updates up to 50 Hz per track, not audio-rate modulation.</li>
+<li>Testing is ongoing for all models and controls, including extreme resonator and PLUCK settings, JUNO patch A82 and saved JUNO settings.</li>
+<li>MD retriggering passed its listening test. Testing of all MD models and parameter locks is ongoing.</li>
+<li>End-to-end device latency has not been established for this release.</li>
+</ul>
+<h2 id="credits">Inspiration &amp; credits</h2>
+<p>Inspired by <a href="https://trigcondition.github.io/sidecar-expander/">Sidecar Expander</a> by trigcondition and contributors.</p>
+<p>Independent project. Not affiliated with Elektron.</p>
+</main>
+<footer class="wrap footer">
+<a class="brand" href="index.html">SIDECAR <span> / MK1</span>
+</a>
+<p>Digital sound. Native workflow.</p>
+<a href="#main">Back to top</a>
+</footer>
+</body>
+</html>

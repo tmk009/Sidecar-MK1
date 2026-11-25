@@ -1,0 +1,12 @@
+/references/
+/local/
+/firmware/
+/Backup/
+*.syx
+*.bin
+*.img
+*.snap
+*.dump
+*.pyc
+__pycache__/
+.DS_Store
