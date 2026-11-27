@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sidecar MK1 — Digital machines for the Analog Rytm</title>
-  <meta name="description" content="Seven digital machines for the Analog Rytm MK1. Native controls, sequencing, sample resonators and the Rytm analog signal path. Introduction, features and setup.">
+  <meta name="description" content="Seven digital machines for the Analog Rytm MK1. Native controls, 13 digital effects, sample resonators and the Rytm analog signal path.">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
@@ -29,6 +29,7 @@
         <a href="#video">Video</a>
         <a href="#machines">Digital machines</a>
         <a href="#controls">Native controls</a>
+        <a href="#effects">FX A &amp; B</a>
         <a href="#screens">Device screenshots</a>
         <a href="#sample">Sample &amp; resonator</a>
         <a href="#modulation">Locks &amp; LFO</a>
@@ -41,8 +42,8 @@
       <section class="intro-section">
         <p class="eyebrow">ANALOG RYTM MK1</p>
         <h1>Sidecar <span>MK1</span></h1>
-        <p class="lead">Seven digital machines for your Rytm.<br>Played and edited from the instrument itself.</p>
-        <p class="version">First alpha in preparation · Project preview</p>
+        <p class="lead">Seven digital machines. Thirteen effects.<br>Played and edited from your Rytm.</p>
+        <p class="version">0.1.0-alpha.1 · Voice FX · Hardware preview</p>
         <div class="actions">
           <a class="button" href="#setup">Setup &amp; status</a>
           <a class="button secondary" href="#machines">What it does</a>
@@ -270,6 +271,34 @@
         <p>The pages are designed for the original MK1 display. You can select and play the machines directly on the Rytm while the Pi handles synthesis.</p>
       </section>
 
+      <section class="feature" id="effects" aria-labelledby="effects-title">
+        <p class="eyebrow">NEW IN 0.1.0-alpha.1</p>
+        <h2 id="effects-title">Two FX slots. Every digital voice.</h2>
+        <p>Give each track its own amount of FX A and FX B. All eight physical voices remain available. Each voice keeps its own effect tails, with shared effect types and settings across all voices.</p>
+        <p>Choose from CHORUS, COMB, HALO, SPACE, RINGS, CLOUDSEED, CRUSH, RINGMOD, NIMBUS, GALACTIC, PHASER, BBD and PINGPONG.</p>
+        <p>Press AMP again on an instrument track for SND A and SND B. On the FX track, repeated AMP presses cycle through the original compressor, FX A and FX B. Each FX page offers TYPE, return level and four effect parameters.</p>
+        <p class="note">The effect is mixed into each digital voice’s mono return before the Rytm’s analog filter, amp and pan. Analog machines do not feed these effects. FX settings are not yet saved with kits; FX locks and LFO modulation are still pending.</p>
+        <div class="screen-pair">
+          <figure class="screen-panel">
+            <figcaption>AMP 2 · Track sends</figcaption>
+            <a href="screens/amp2.png" aria-label="Open AMP 2 · Track sends screenshot at full size"><img src="screens/amp2.png" width="976" height="256" alt="Native AMP2 page with independent send A and B controls" loading="lazy"></a>
+          </figure>
+          <figure class="screen-panel">
+            <figcaption>AMP · Original compressor</figcaption>
+            <a href="screens/compressor.png" aria-label="Open AMP · Original compressor screenshot at full size"><img src="screens/compressor.png" width="976" height="256" alt="Original Rytm compressor remains accessible" loading="lazy"></a>
+          </figure>
+          <figure class="screen-panel">
+            <figcaption>FX A · CRUSH</figcaption>
+            <a href="screens/fx-a.png" aria-label="Open FX A · CRUSH screenshot at full size"><img src="screens/fx-a.png" width="976" height="256" alt="Native FX A page with CRUSH and four parameters" loading="lazy"></a>
+          </figure>
+          <figure class="screen-panel">
+            <figcaption>FX B · GALACTIC</figcaption>
+            <a href="screens/fx-b.png" aria-label="Open FX B · GALACTIC screenshot at full size"><img src="screens/fx-b.png" width="976" height="256" alt="Native FX B page with GALACTIC and four parameters" loading="lazy"></a>
+          </figure>
+        </div>
+        <p class="note">Native OS pages captured in the emulator at 8× scale, without smoothing. Basic FX operation has been confirmed by listening on the MK1; these images are not hardware photographs.</p>
+      </section>
+
       <section class="feature" id="screens" aria-labelledby="screens-title">
         <p class="eyebrow">ON THE DISPLAY</p>
         <h2 id="screens-title">Device screenshots</h2>
@@ -450,8 +479,8 @@
 
       <section class="feature" id="setup">
         <p class="eyebrow">SETUP &amp; STATUS</p>
-        <h2>The first MK1 alpha</h2>
-        <p>You’ll need an Analog Rytm MK1 with OS 1.74, a Raspberry Pi and a USB connection. Downloads are not available yet. Installation files and a step-by-step guide will be linked here when the alpha is ready.</p>
+        <h2>0.1.0-alpha.1 · Voice FX</h2>
+        <p>You’ll need an Analog Rytm MK1 with OS 1.74, a Raspberry Pi and a USB connection. The current hardware preview includes per-voice FX A/B. Downloads are not available yet. Installation files and a step-by-step guide will be linked here when the alpha is ready.</p>
         <div class="resource-links">
           <a href="guide.html#setup"><strong>Setup requirements</strong><span>The hardware and original firmware you need.</span></a>
           <a href="guide.html#status"><strong>What works now</strong><span>Tested features and ongoing hardware tests.</span></a>

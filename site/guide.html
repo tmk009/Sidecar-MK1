@@ -20,16 +20,17 @@
 </div>
 </header>
 <main class="wrap guide" id="main">
-<p class="eyebrow">0.1.0-alpha.1 · IN PREPARATION</p>
+<p class="eyebrow">0.1.0-alpha.1 · VOICE FX</p>
 <h1>Know the setup.<br>Know the limits.</h1>
 <p class="lead">A practical guide to the first Sidecar alpha.</p>
 <div class="notice">
 <p>
-<strong>The first alpha is in preparation.</strong> Downloads are not available yet. Installation files and instructions will be linked from the home page when they are ready.</p>
+<strong>The Voice FX hardware preview is running.</strong> Downloads are not available yet. Installation files and instructions will be linked from the home page when they are ready.</p>
 </div>
 <nav aria-label="Guide sections">
 <a href="#setup">Setup</a>
 <a href="#status">Test status</a>
+<a href="#effects">Using FX</a>
 <a href="#limits">Limitations</a>
 <a href="#credits">Credits</a>
 </nav>
@@ -71,15 +72,29 @@
 <td>Local/ARM64 checks passed; hardware listening tests are still pending.</td>
 </tr>
 <tr>
+<td>FX A/B per digital voice</td>
+<td>Basic operation confirmed by hardware listening. All 13 algorithms and eight independent returns tested on the Pi; full musical stress testing remains open.</td>
+</tr>
+<tr>
 <td>All tracks and choke pairs</td>
 <td>Implemented; full hardware testing is ongoing.</td>
 </tr>
 </tbody>
 </table>
 <p>Before release, we’ll test a fresh Pi installation, longer sessions, locks and LFOs, saving and loading, restarts and reconnection.</p>
+<h2 id="effects">Using FX A and FX B</h2>
+<ol>
+<li>Select a digital machine, then press AMP twice to reach the track’s SND A and SND B controls.</li>
+<li>Select the FX track. AMP opens the original compressor; press again for FX A, then again for FX B.</li>
+<li>Choose an effect and raise RTN. Raise the corresponding track send. For a first comparison, try CHORUS with RTN 100 and SND A 127, then lower the send to zero.</li>
+</ol>
+<p>Each physical voice has independent effect state. The shared FX-A/B settings control all voices, while each logical track has its own sends. Wet audio is folded to mono and mixed into that voice before the analog filter, AMP and pan. Short AMP envelopes can cut off tails; increase decay for longer effects.</p>
 <h2 id="limits">Current limitations</h2>
 <ul>
-<li>GRAIN is excluded. Active machines: PLAITS, MD, ACID, WAVEPAD, JUNO, PLUCK and SAMPLE.</li>
+<li>The old GRAIN plugin is excluded; the standalone successor remains experimental. The documented machine set is: PLAITS, MD, ACID, WAVEPAD, JUNO, PLUCK and SAMPLE.</li>
+<li>FX A/B currently process digital voices, with mono returns. Analog sound sources do not feed them.</li>
+<li>FX settings are volatile: kit persistence, parameter locks and FX LFO targets are not implemented yet.</li>
+<li>Two NIMBUS instances on all eight voices leave little processing headroom. Heavy effects combined with heavy instruments still need musical stress testing.</li>
 <li>Twelve tracks share eight physical voices and native choke relationships.</li>
 <li>SAMPLE DIR does not yet support native parameter locks. Some factory sample sources are inaccessible.</li>
 <li>Continuous modulation uses control-rate updates up to 50 Hz per track, not audio-rate modulation.</li>
